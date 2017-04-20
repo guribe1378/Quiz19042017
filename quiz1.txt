@@ -1,0 +1,10 @@
+Create tablespace big_tbs_giovanny_uribe datafile 'giovanny_uribe.dbf' size 1000M;
+Create tablespace quiz datafile 'datos1.dbf'size 200M AUTOEXTEND on next 600M maxsize 1000M,
+'datos2.dbf'size 200M AUTOEXTEND on next 600M maxsize 1000M,
+'datos3.dbf' size 200M AUTOEXTEND on next 600M maxsize 1000M;
+
+CREATE PROFILE administradores limit SESSIONS_PER_USER UNLIMITED
+FAILED_LOGIN_ATTEMPTS UNLIMITED IDLE_TIME 15;
+
+create user usuario10 identified by sistemas123 default tablespace quiz
+profile administradores ;
